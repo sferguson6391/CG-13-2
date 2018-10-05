@@ -22,9 +22,9 @@ namespace CG_13_2
 
             var students = (studentList.Where(s => s.GPA >= 3.0M && s.Grade >= 9)
                             .OrderBy(s => s.Grade)
-                            .OrderBy(s => s.GPA)
-                            .OrderBy(s => s.LastName)
-                            .OrderBy(s => s.FirstName)
+                            .ThenBy(s => s.GPA)
+                            .ThenBy(s => s.LastName)
+                            .ThenBy(s => s.FirstName)
                             .ToList());
 
             students.Reverse();
